@@ -113,7 +113,7 @@ export const StyledStateChart = styled.div`
 interface StateChartProps {
   className?: string;
   machine: StateNode<any> | string;
-  onSave: (machineString: string) => void;
+  onSave?: (machineString: string) => void;
   height?: number | string;
 }
 
@@ -238,7 +238,7 @@ export const StateChart: React.FC<StateChartProps> = ({
           <CodePanel
             code={code}
             onChange={code => updateMachine(code)}
-            onSave={onSave}
+            onSave={onSave!}
           />
         );
       case 'state':
