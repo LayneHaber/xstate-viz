@@ -13,6 +13,7 @@ import { Logo } from './logo';
 import { Loader } from './Loader';
 import { LayoutButton, StyledLayoutButton } from './LayoutButton';
 import { toMachine } from './StateChart';
+import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -80,7 +81,7 @@ export const StyledLogo = styled(Logo)`
   height: 2rem;
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #57b0ea;
   text-transform: uppercase;
@@ -88,6 +89,7 @@ export const StyledLink = styled.a`
   font-size: 75%;
   font-weight: bold;
   margin: 0 0.25rem;
+  to: ${(props: any) => props.to};
 `;
 
 export const StyledLinks = styled.nav`
@@ -608,7 +610,7 @@ export function App() {
       <AppContext.Provider value={{ state: current, send, service }}>
         <User />
         <Header />
-        {current.matches({ gist: 'fetching' }) ? (
+        {/* {current.matches({ gist: 'fetching' }) ? (
           <Loader />
         ) : (
           <>
@@ -624,7 +626,7 @@ export function App() {
               ] || 'Show'}
             </LayoutButton>
           </>
-        )}
+        )} */}
       </AppContext.Provider>
     </StyledApp>
   );
