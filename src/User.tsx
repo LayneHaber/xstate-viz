@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AppContext, StyledLink } from './App';
+import { AppContext } from './App';
 import styled from 'styled-components';
 import { StyledButton } from './Button';
 
